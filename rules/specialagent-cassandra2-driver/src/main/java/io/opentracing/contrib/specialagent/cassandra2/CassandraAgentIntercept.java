@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package io.opentracing.contrib.specialagent.cassandra;
+package io.opentracing.contrib.specialagent.cassandra2;
 
 import com.datastax.driver.core.Session;
 
@@ -33,8 +33,9 @@ public class CassandraAgentIntercept {
     }
   }
 
+
   public static Object exit(final Object thiz) {
-    if (isCassandra2) {
+    if (!isCassandra2) {
       return thiz;
     }
 
